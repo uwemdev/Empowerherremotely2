@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Mail, Instagram, Youtube, Send, MapPin, Clock } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import FloatingCTA from '@/components/FloatingCTA';
 
 const Contact = () => {
