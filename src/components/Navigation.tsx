@@ -1,6 +1,7 @@
+import logo from "@/assets/Empower_image_real__1_-removebg-preview.png";
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Heart } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,10 +31,13 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="bg-gradient-primary p-2 rounded-full group-hover:scale-110 transition-transform duration-300">
-              <Heart className="h-6 w-6 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            <img
+              src={logo}
+              alt="EHR Logo"
+              style={{ height: "100px", width: "90px" }}
+              className="hidden lg:block h-8"
+            />
+            <span className="text-xl font-bold bg-gradient-to-r from-purple-500 via-purple-400 to-purple-600 bg-clip-text text-transparent">
               Empower Her Remotely
             </span>
           </Link>
@@ -44,18 +48,21 @@ const Navigation = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`font-medium transition-colors duration-300 hover:text-primary ${
-                  location.pathname === item.path
-                    ? 'text-primary border-b-2 border-primary'
-                    : 'text-foreground'
+                style={{ fontWeight: 900 }}
+                className={`text-purple-400 transition-colors duration-300 hover:text-black ${
+                  location.pathname === item.path ? 'border-b-2 border-primary' : ''
                 }`}
               >
                 {item.label}
               </Link>
             ))}
+
+            {/* Updated Button */}
             <a
-              href="#"
-              className="btn-primary"
+              href="https://chat.whatsapp.com/YOUR_GROUP_LINK"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-purple-400 text-white font-extrabold px-5 py-2 rounded-full hover:bg-black hover:text-white transition duration-300"
             >
               Join Community
             </a>
@@ -65,7 +72,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-foreground hover:text-primary transition-colors duration-300"
+              className="text-purple-600 hover:text-black transition-colors duration-300"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -80,18 +87,26 @@ const Navigation = () => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
-                    location.pathname === item.path
-                      ? 'text-primary bg-primary/10'
-                      : 'text-foreground hover:text-primary hover:bg-primary/5'
-                  }`}
                   onClick={() => setIsOpen(false)}
+                  style={{ fontWeight: 900 }}
+                  className={`block px-3 py-2 rounded-md text-base text-purple-600 transition-colors duration-300 hover:text-black ${
+                    location.pathname === item.path
+                      ? 'bg-primary/10'
+                      : 'hover:bg-primary/5'
+                  }`}
                 >
                   {item.label}
                 </Link>
               ))}
+
+              {/* Mobile Button */}
               <div className="px-3 py-2">
-                <a href="#" className="btn-primary w-full text-center block">
+                <a
+                  href="https://chat.whatsapp.com/BsBDt1B5CGbLMSsDkmui72"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full block bg-purple-600 text-white font-extrabold px-4 py-2 rounded-full hover:bg-black hover:text-white transition duration-300 text-center"
+                >
                   Join Community
                 </a>
               </div>
@@ -104,3 +119,4 @@ const Navigation = () => {
 };
 
 export default Navigation;
+

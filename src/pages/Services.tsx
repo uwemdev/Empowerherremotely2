@@ -9,26 +9,50 @@ const Services = () => {
     {
       icon: Monitor,
       title: "Virtual Assistant Training Program",
-      description: "Comprehensive 4-week program covering all aspects of VA work",
-      features: ["Client Communication", "Task Management", "Tools & Software", "Pricing Strategies"],
-      price: "$297",
-      popular: true
+      description:
+        "Our signature 4-5 week Virtual Assistant Training is beginner-friendly and fully online. You'll gain hands-on experience in:",
+      features: [
+        "Virtual Assistant Training (4 weeks with certificate at the end)",
+        "A 2 Day Mentorship Class (How to apply for jobs, Create a cover letter, A CV that would land you a high paying role, etc.)",
+        "Slack Community Membership and other Job Groups.",
+        "International VA Companies Actively Recruiting ( Pay is 500k-1M)",
+        "Tutorials on how to get jobs on Upwork (Includes more than 10 free materials including proposals and videos)",
+        <span><strong>Bonus:</strong> Social Media Management Training (5th Week)</span>,
+        "EHR Remote Work Bundle(Cv, Cover letter, Portfolio Template and a list of 30 Websites to get International Remote Jobs)"
+      ],
+      price: "N10,000",
+      popular: true,
+      link: "https://selar.co/io5o52"
     },
     {
       icon: BookOpen,
-      title: "Upwork Getting Paid Guide",
-      description: "Master the art of landing high-paying clients on Upwork",
-      features: ["Profile Optimization", "Proposal Writing", "Client Acquisition", "Rate Negotiation"],
-      price: "$97",
-      popular: false
+      title: "Job Vacancy Group",
+      description:
+        "Join our upcoming webinar where you'll learn the right way to apply for jobs, get access to a proven CV template that gets you noticed, and explore real international job opportunities in roles like VA, Digital Marketing, Project Management, Data Analysis, and more.",
+      features: [
+        "A webinar to show you the right way to apply for jobs",
+        "A good CV template that will land you the role",
+        "Legit international jobs in roles like VA, SMM, Project Management, Customer care, Data Analysis, Graphic designs, etc."
+      ],
+      price: "N3,500",
+      popular: false,
+      link: "http://selar.co/153j14"
     },
     {
       icon: Users,
-      title: "2-Day Mentorship Session",
-      description: "Personal guidance from successful remote work veterans",
-      features: ["Career Planning", "Skill Assessment", "Goal Setting", "Action Plan"],
-      price: "$497",
-      popular: false
+      title: "Remote Work Package",
+      description:
+        "Get fully equipped for remote success with a tailored CV that showcases your remote work strengths, a standout LinkedIn profile, and compelling cover letters that leave a lasting impression.",
+      features: [
+        "Remote Work Resume/CV: Tailored content showcasing your remote work skills, accomplishments, and potential",
+        "LinkedIn Optimization: Captivating profile highlighting your remote work experience.",
+        "Custom Cover Letter: Personalized cover letters for strong impressions.",
+        "Remote Interview Coaching: Personalized coaching to excel in virtual interviews.",
+        "Clarity Call: Access to clarity calls from a seasoned remote work expert."
+      ],
+      price: "N25,000",
+      popular: false,
+      link: "https://selar.co/5jm886"
     }
   ];
 
@@ -36,27 +60,27 @@ const Services = () => {
     {
       icon: DollarSign,
       title: "VA Companies Recruiting Info",
-      description: "Access to companies offering $500k-$1M annual positions",
-      link: "#"
+      description: "Access to companies offering $500k–$1M annual positions",
+      link: "/contact"
     },
     {
       icon: Video,
       title: "Daily Job Listings",
       description: "Fresh remote opportunities delivered daily",
-      link: "#"
+      link: "/contact"
     },
     {
       icon: Zap,
       title: "Slack Community Access",
       description: "24/7 support and networking with successful remote workers",
-      link: "#"
+      link: "/contact"
     }
   ];
 
   return (
     <div>
       <Navigation />
-      {/* Hero Section */}
+
       <section className="bg-hero py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-navy-dark mb-6 animate-fade-up">
@@ -71,13 +95,12 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Main Services */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center text-navy-dark mb-16 animate-fade-up">
             Our Training Programs
           </h2>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {mainServices.map((service, index) => {
               const Icon = service.icon;
@@ -96,19 +119,19 @@ const Services = () => {
                       </span>
                     </div>
                   )}
-                  
-                  <div className="bg-gradient-primary p-4 rounded-full w-fit mb-6 animate-pulse-glow">
+
+                  <div className="bg-purple-600/90 p-5 rounded-full w-fit mb-6 shadow-lg animate-pulse-glow">
                     <Icon className="h-8 w-8 text-white" />
                   </div>
-                  
+
                   <h3 className="text-2xl font-bold text-navy-dark mb-4">
                     {service.title}
                   </h3>
-                  
+
                   <p className="text-muted-foreground mb-6">
                     {service.description}
                   </p>
-                  
+
                   <ul className="space-y-3 mb-8">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center">
@@ -117,29 +140,38 @@ const Services = () => {
                       </li>
                     ))}
                   </ul>
-                  
+
                   <div className="text-center">
                     <div className="text-3xl font-bold text-primary mb-4">
                       {service.price}
                     </div>
-                    <button className="btn-primary w-full">
+                    <a
+                      href={service.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary w-full block text-center"
+                    >
                       Enroll Now
-                    </button>
+                    </a>
                   </div>
                 </div>
               );
             })}
           </div>
         </div>
+
+        <br />
+        <h3 className="text-center font-bold text-lg">
+          65% of our graduates land remote gigs or freelance clients within weeks of completing the program!
+        </h3>
       </section>
 
-      {/* Additional Services */}
       <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center text-navy-dark mb-16 animate-fade-up">
             Additional Resources
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {additionalServices.map((service, index) => {
               const Icon = service.icon;
@@ -149,18 +181,18 @@ const Services = () => {
                   className="card-gradient rounded-2xl p-8 text-center card-hover animate-fade-up"
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
-                  <div className="bg-gradient-primary p-4 rounded-full w-fit mx-auto mb-6 animate-pulse-glow">
+                  <div className="bg-purple-600/90 p-5 rounded-full w-fit mx-auto mb-6 shadow-lg animate-pulse-glow">
                     <Icon className="h-8 w-8 text-white" />
                   </div>
-                  
+
                   <h3 className="text-xl font-bold text-navy-dark mb-4">
                     {service.title}
                   </h3>
-                  
+
                   <p className="text-muted-foreground mb-6">
                     {service.description}
                   </p>
-                  
+
                   <a href={service.link} className="btn-secondary">
                     Learn More
                   </a>
@@ -171,31 +203,36 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Remote Work Package CTA */}
       <section className="py-20 bg-gradient-primary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="animate-fade-up">
             <h2 className="text-4xl font-bold text-navy-dark mb-6">
-              Complete Remote Work Package
+              Virtual Assistant Training Program
             </h2>
             <p className="text-xl text-navy-medium mb-8">
               Get everything you need to succeed in remote work - all programs included!
             </p>
             <div className="bg-card rounded-3xl p-8 mb-8 animate-pulse-glow">
-              <div className="text-5xl font-bold text-primary mb-4">$797</div>
-              <div className="text-muted-foreground line-through text-xl mb-2">Regular: $891</div>
-              <div className="text-green-600 font-semibold">Save $94!</div>
+              <div className="text-5xl font-bold text-primary mb-4">N25,000</div>
+              <div className="text-muted-foreground line-through text-xl mb-2">Regular: N39,000</div>
+              <div className="text-green-600 font-semibold">Save N14,000!</div>
             </div>
-            <button className="btn-primary text-xl px-12 py-4">
-              Get Complete Package
-            </button>
+           <a
+  href="https://selar.co/io5o52"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn-primary text-xl px-12 py-4 inline-block"
+>
+  Get Complete Package
+</a>
+
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
       <TestimonialsSection />
       <FloatingCTA />
+      <Footer />
     </div>
   );
 };

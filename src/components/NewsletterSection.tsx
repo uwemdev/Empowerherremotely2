@@ -27,7 +27,7 @@ const NewsletterSection = () => {
           <div className="bg-gradient-primary p-4 rounded-full w-fit mx-auto mb-8 animate-pulse-glow">
             <Mail className="h-12 w-12 text-white" />
           </div>
-          
+
           <h2 className="text-4xl font-bold text-navy-dark mb-4">
             Don't Miss a Remote Opportunity
           </h2>
@@ -51,22 +51,20 @@ const NewsletterSection = () => {
                 Enter your email address
               </label>
             </div>
-            
+
             <button
               type="submit"
               disabled={isSubscribed}
-              className={`btn-primary w-full group ${
+              className={`btn-primary w-full group inline-flex items-center justify-center gap-2 ${
                 isSubscribed ? 'opacity-75 cursor-not-allowed' : ''
               }`}
             >
               {isSubscribed ? (
-                <>
-                  <span>✓ Subscribed!</span>
-                </>
+                <span>✓ Subscribed!</span>
               ) : (
                 <>
                   <span>Join the Community</span>
-                  <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  <Send className="w-5 h-10 group-hover:translate-x-1 transition-transform duration-300" />
                 </>
               )}
             </button>
@@ -82,3 +80,4 @@ const NewsletterSection = () => {
 };
 
 export default NewsletterSection;
+

@@ -1,78 +1,44 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Play, Star } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+// Import all 15 images
+import image1 from '@/assets/images/Testimonial-1.jpg';
+import image2 from '@/assets/images/Testimonial-2.jpg';
+import image3 from '@/assets/images/Testimonial3.jpg';
+import image4 from '@/assets/images/testimonial-4.jpg';
+import image5 from '@/assets/images/testimonial-5.jpg';
+import image6 from '@/assets/images/testimonial-6.jpg';
+import image7 from '@/assets/images/testimonial-7.jpg';
+import image8 from '@/assets/images/testimonial-8.jpg';
+import image9 from '@/assets/images/testimonial-9.jpg';
+import image10 from '@/assets/images/testimonial-10.jpg';
+import image11 from '@/assets/images/testimonial-11.jpg';
+import image12 from '@/assets/images/testimonial-12.jpg';
+import image13 from '@/assets/images/Testimonial-14.jpg';
+import image14 from '@/assets/images/Testimonial-15.jpg';
+import image15 from '@/assets/images/Testimonial-16.jpg';
 
 const Testimonials = () => {
-  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const [activeSlide, setActiveSlide] = useState(0);
 
-  const videoTestimonials = [
-    {
-      id: '1',
-      name: 'Maria Rodriguez',
-      role: 'Virtual Assistant',
-      thumbnail: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop&crop=face',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      quote: 'EHR completely changed my life. I went from struggling to find work to earning $3,000/month as a VA!',
-      rating: 5,
-      duration: '2:30'
-    },
-    {
-      id: '2',
-      name: 'Jessica Chen',
-      role: 'Digital Marketer',
-      thumbnail: 'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=400&h=300&fit=crop&crop=face',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      quote: 'The mentorship program helped me land my dream remote job with a 40% salary increase.',
-      rating: 5,
-      duration: '3:15'
-    },
-    {
-      id: '3',
-      name: 'Amanda Thompson',
-      role: 'Content Writer',
-      thumbnail: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=300&fit=crop&crop=face',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      quote: 'From zero experience to earning $50/hour writing. The community support is incredible!',
-      rating: 5,
-      duration: '4:02'
-    },
-    {
-      id: '4',
-      name: 'Lisa Garcia',
-      role: 'Social Media Manager',
-      thumbnail: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=300&fit=crop&crop=face',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      quote: 'I now work with 5 international clients and have the freedom to work from anywhere!',
-      rating: 5,
-      duration: '3:45'
-    },
-    {
-      id: '5',
-      name: 'Rachel Kim',
-      role: 'Online Business Manager',
-      thumbnail: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=face',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      quote: 'The skills training gave me the confidence to start my own VA agency. Now I employ 12 people!',
-      rating: 5,
-      duration: '5:20'
-    },
-    {
-      id: '6',
-      name: 'Sophie Williams',
-      role: 'Executive Assistant',
-      thumbnail: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?w=400&h=300&fit=crop&crop=face',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      quote: 'Working remotely allowed me to be present for my family while building a successful career.',
-      rating: 5,
-      duration: '2:55'
-    }
+  const sliderImages = [
+    image1, image2, image3, image4, image5, image6,
+    image7, image8, image9, image10, image11, image12,
+    image13, image14, image15,
   ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % sliderImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="min-h-screen">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -85,67 +51,42 @@ const Testimonials = () => {
         </div>
       </section>
 
-      {/* Video Testimonials Grid */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {videoTestimonials.map((testimonial, index) => (
-              <div
-                key={testimonial.id}
-                className="group bg-card rounded-2xl overflow-hidden shadow-hover transition-all duration-300 hover:shadow-elegant animate-fade-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {/* Video Thumbnail */}
-                <div className="relative aspect-video overflow-hidden">
-                  {activeVideo === testimonial.id ? (
-                    <iframe
-                      src={testimonial.videoUrl}
-                      className="w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  ) : (
-                    <>
-                      <img
-                        src={testimonial.thumbnail}
-                        alt={testimonial.name}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                        <button
-                          onClick={() => setActiveVideo(testimonial.id)}
-                          className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary-dark transition-all duration-300 transform hover:scale-110"
-                        >
-                          <Play className="w-6 h-6 ml-1" />
-                        </button>
-                      </div>
-                      <div className="absolute top-4 right-4 bg-black bg-opacity-70 text-white px-2 py-1 rounded text-sm">
-                        {testimonial.duration}
-                      </div>
-                    </>
-                  )}
-                </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  <div className="flex items-center mb-3">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  
-                  <h3 className="text-xl font-semibold text-navy-dark mb-1">
-                    {testimonial.name}
-                  </h3>
-                  <p className="text-primary font-medium mb-3">
-                    {testimonial.role}
-                  </p>
-                  
-                  <blockquote className="text-navy-medium italic">
-                    "{testimonial.quote}"
-                  </blockquote>
-                </div>
+      {/* Image Slider Section */}
+      <section className="bg-background py-12">
+        <div className="max-w-xl mx-auto relative text-center">
+          <div className="relative overflow-hidden rounded-2xl shadow-xl bg-black">
+            <img
+              src={sliderImages[activeSlide]}
+              alt={`Slide ${activeSlide + 1}`}
+              className="w-[600px] h-[650px] object-cover rounded-2xl"
+            />
+            <div className="p-6 text-left text-white bg-gradient-to-t from-black to-black/60 absolute bottom-0 w-full">
+              <div className="mt-4 text-center text-xs uppercase tracking-widest text-white font-medium">
+                STUDENTS TESTIMONIAL
               </div>
+              <div className="absolute top-1/2 right-4 transform -translate-y-1/2">
+                <button
+                  onClick={() =>
+                    setActiveSlide((prev) => (prev + 1) % sliderImages.length)
+                  }
+                  className="text-white p-2 hover:scale-110 transition"
+                >
+                  &gt;
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Navigation dots */}
+          <div className="mt-6 flex justify-center space-x-2">
+            {sliderImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveSlide(index)}
+                className={`w-3 h-3 rounded-full ${
+                  index === activeSlide ? 'bg-gray-900' : 'bg-gray-300'
+                }`}
+              />
             ))}
           </div>
         </div>
@@ -177,3 +118,5 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+
+
