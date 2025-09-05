@@ -6,25 +6,21 @@ const ServicesSection = () => {
       icon: GraduationCap,
       title: "Free Webinars",
       description: "Learn from industry experts about remote work trends, tools, and techniques.",
-      color: "from-primary to-primary-dark"
     },
     {
       icon: Briefcase,
       title: "Daily Job Opportunities",
       description: "Fresh remote job listings delivered daily to your inbox - curated for women.",
-      color: "from-secondary to-accent"
     },
     {
       icon: Brain,
       title: "Skills Training",
       description: "Comprehensive training programs to boost your remote work capabilities.",
-      color: "from-accent to-secondary"
     },
     {
       icon: Users,
       title: "Mentorship & Support",
       description: "24/7 community support and one-on-one mentorship from successful remote workers.",
-      color: "from-primary-dark to-secondary"
     }
   ];
 
@@ -46,12 +42,14 @@ const ServicesSection = () => {
             return (
               <div
                 key={service.title}
-                className={`card-gradient p-8 rounded-2xl card-hover animate-fade-up`}
+                className="card-gradient p-8 rounded-2xl card-hover animate-fade-up"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className={`bg-gradient-to-r ${service.color} p-4 rounded-full w-fit mb-6 animate-pulse-glow`}>
+                {/* ✅ Circle background changed to #4F227B */}
+                <div className="bg-[#4F227B] p-4 rounded-full w-fit mb-6 shadow-lg animate-pulse-glow">
                   <Icon className="h-8 w-8 text-white" />
                 </div>
+
                 <h3 className="text-xl font-semibold text-navy-dark mb-4">
                   {service.title}
                 </h3>
@@ -68,3 +66,5 @@ const ServicesSection = () => {
 };
 
 export default ServicesSection;
+
+

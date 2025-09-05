@@ -57,15 +57,12 @@ All colors MUST be HSL.
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
 
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
 
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
 
     --sidebar-border: 220 13% 91%;
@@ -160,7 +157,7 @@ All colors MUST be HSL.
   
   /* Button variants */
   .btn-primary {
-    @apply bg-gradient-to-r from-primary to-secondary text-primary-foreground px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+    @apply px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105;
   }
   
   .btn-secondary {
@@ -198,10 +195,11 @@ All colors MUST be HSL.
   
   /* Background elements */
   .bg-hero {
-    background: var(--gradient-hero);
-    position: relative;
-    overflow: hidden;
-  }
+  background: linear-gradient(135deg, #4F227B, #5B2E8A, #6A3BA3, #7C52B8) !important;
+  position: relative;
+  overflow: hidden;
+}
+
   
   .bg-hero::before {
     content: '';
@@ -228,9 +226,34 @@ All colors MUST be HSL.
   }
 }
 
+/* === Multi-shade purple button === */
+a.btn-primary,
+button.btn-primary {
+  background: linear-gradient(135deg, #a89db4, #5B2E8A, #786b88) !important;
+  color: #ffffff !important;
+  transition: background 0.3s ease, transform 0.2s ease !important;
+}
 
+a.btn-primary:hover,
+button.btn-primary:hover {
+  background: linear-gradient(135deg, #786b88, #7C52B8, #786b88) !important;
+}
 
+a.btn-primary:active,
+button.btn-primary:active {
+  background: linear-gradient(135deg, #a18fb1, #4F227B, #786b88) !important;
+}
 
+a.btn-primary:focus-visible,
+button.btn-primary:focus-visible {
+  background: linear-gradient(135deg, #5B2E8A, #6A3BA3, #7C52B8) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(79,34,123,0.25) !important;
+}
+
+.icon-purple {
+  color: #4F227B !important;
+}
 
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -272,4 +295,3 @@ All colors MUST be HSL.
     transform: translateX(0);
   }
 }
-

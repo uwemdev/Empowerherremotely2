@@ -97,7 +97,7 @@ const Services = () => {
 
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center text-navy-dark mb-16 animate-fade-up">
+          <h2 className="text-4xl text-[#4F227B] font-bold text-center text-navy-dark mb-16 animate-fade-up">
             Our Training Programs
           </h2>
 
@@ -105,13 +105,14 @@ const Services = () => {
             {mainServices.map((service, index) => {
               const Icon = service.icon;
               return (
-                <div
-                  key={service.title}
-                  className={`relative card-gradient rounded-3xl p-8 card-hover animate-fade-up ${
-                    service.popular ? 'ring-2 ring-primary' : ''
-                  }`}
-                  style={{ animationDelay: `${index * 200}ms` }}
-                >
+              <div
+  key={service.title}
+  className={`relative card-gradient rounded-3xl p-8 card-hover animate-fade-up ${
+    service.popular ? 'ring-2 ring-primary' : ''
+  } text-[#4F227B]`}  // 👈 add this
+  style={{ animationDelay: `${index * 200}ms` }}
+>
+
                   {service.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                       <span className="bg-gradient-primary text-white px-4 py-2 rounded-full text-sm font-semibold">
