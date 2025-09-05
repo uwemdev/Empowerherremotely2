@@ -2,7 +2,7 @@ import { Mail, Instagram, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-purple-400 text-white py-16">
+    <footer className="text-white py-16" style={{ backgroundColor: "#B08CD4" }}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
@@ -79,7 +79,6 @@ const Footer = () => {
             </ul>
           </div>
 
-
           {/* Services */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Services</h4>
@@ -102,4 +101,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
 

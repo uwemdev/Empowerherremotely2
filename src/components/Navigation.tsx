@@ -1,7 +1,7 @@
 import logo from "@/assets/Empower_image_real__1_-removebg-preview.png";
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,21 +12,23 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { path: '/', label: 'Home' },
-    { path: '/services', label: 'Services' },
-    { path: '/testimonials', label: 'Testimonials' },
-    { path: '/contact', label: 'Contact' },
+    { path: "/", label: "Home" },
+    { path: "/services", label: "Services" },
+    { path: "/testimonials", label: "Testimonials" },
+    { path: "/contact", label: "Contact" },
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-card/95 backdrop-blur-md shadow-soft' : 'bg-transparent'
-    }`}>
+    <nav
+      className={`fixed top-0 w-full text-xl z-50 transition-all duration-300 ${
+        isScrolled ? "bg-card/95 backdrop-blur-md shadow-soft" : "bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -37,7 +39,7 @@ const Navigation = () => {
               style={{ height: "100px", width: "90px" }}
               className="hidden lg:block h-8"
             />
-            <span className="text-xl font-bold bg-gradient-to-r from-purple-500 via-purple-400 to-purple-600 bg-clip-text text-transparent">
+            <span className="text-2xl font-bold text-[#B08CD4]">
               Empower Her Remotely
             </span>
           </Link>
@@ -49,8 +51,10 @@ const Navigation = () => {
                 key={item.path}
                 to={item.path}
                 style={{ fontWeight: 900 }}
-                className={`text-purple-400 transition-colors duration-300 hover:text-black ${
-                  location.pathname === item.path ? 'border-b-2 border-primary' : ''
+                className={`text-[#B08CD4] transition-colors duration-300 hover:text-black ${
+                  location.pathname === item.path
+                    ? "border-b-2 border-[#B08CD4]"
+                    : ""
                 }`}
               >
                 {item.label}
@@ -59,10 +63,10 @@ const Navigation = () => {
 
             {/* Updated Button */}
             <a
-              href="https://chat.whatsapp.com/YOUR_GROUP_LINK"
+              href="https://chat.whatsapp.com/DMF18nZMj027hlzVjTAEv2?mode=ems_copy_t"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-purple-400 text-white font-extrabold px-5 py-2 rounded-full hover:bg-black hover:text-white transition duration-300"
+              className="bg-[#B08CD4] text-white font-extrabold text-xl px-5 py-2 rounded-full hover:bg-black hover:text-white transition duration-300"
             >
               Join Community
             </a>
@@ -72,7 +76,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-purple-600 hover:text-black transition-colors duration-300"
+              className="text-[#B08CD4] hover:text-black transition-colors duration-300"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -89,10 +93,10 @@ const Navigation = () => {
                   to={item.path}
                   onClick={() => setIsOpen(false)}
                   style={{ fontWeight: 900 }}
-                  className={`block px-3 py-2 rounded-md text-base text-purple-600 transition-colors duration-300 hover:text-black ${
+                  className={`block px-3 py-2 rounded-md text-base text-[#B08CD4] transition-colors duration-300 hover:text-black ${
                     location.pathname === item.path
-                      ? 'bg-primary/10'
-                      : 'hover:bg-primary/5'
+                      ? "bg-primary/10"
+                      : "hover:bg-primary/5"
                   }`}
                 >
                   {item.label}
@@ -105,7 +109,7 @@ const Navigation = () => {
                   href="https://chat.whatsapp.com/BsBDt1B5CGbLMSsDkmui72"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full block bg-purple-600 text-white font-extrabold px-4 py-2 rounded-full hover:bg-black hover:text-white transition duration-300 text-center"
+                  className="w-full block bg-[#B08CD4] text-white font-extrabold px-4 py-2 rounded-full hover:bg-black hover:text-white transition duration-300 text-center"
                 >
                   Join Community
                 </a>
@@ -119,4 +123,5 @@ const Navigation = () => {
 };
 
 export default Navigation;
+
 

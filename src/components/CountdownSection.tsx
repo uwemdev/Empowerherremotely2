@@ -23,7 +23,7 @@ const CountdownSection = () => {
         setTimeLeft({
           days: Math.floor(distance / (1000 * 60 * 60 * 24)),
           hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)), 
           seconds: Math.floor((distance % (1000 * 60)) / 1000)
         });
       }
@@ -33,13 +33,13 @@ const CountdownSection = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-navy-dark">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="py-20 text-[#4F227B] bg-navy-dark">
+      <div className="max-w-4xl mx-auto text-[#4F227B] px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-up">
-          <h2 className="text-4xl font-bold text-black mb-4">
+          <h2 className="text-4xl text-[#4F227B] font-bold text-black mb-4">
             Upcoming Webinar
           </h2>
-          <p className="text-xl text-black/80 mb-12">
+          <p className="text-xl text-[#4F227B] text-black/80 mb-12">
             "Master the Art of Remote Work - From Application to Success"
           </p>
 
@@ -68,11 +68,11 @@ const CountdownSection = () => {
                 <Calendar className="w-6 h-6 mr-3 text-primary" />
                 <span>Next Sunday</span>
               </div>
-              <div className="flex items-center justify-center md:justify-start">
+              <div className="flex items-center text-[#4F227B] justify-center md:justify-start">
                 <Clock className="w-6 h-6 mr-3 text-primary" />
                 <span>7:00 PM EST</span>
               </div>
-              <div className="flex items-center justify-center md:justify-start">
+              <div className="flex items-center text-[#4F227B] justify-center md:justify-start">
                 <Users className="w-6 h-6 mr-3 text-primary" />
                 <span>Limited to 100 seats</span>
               </div>
@@ -80,7 +80,7 @@ const CountdownSection = () => {
           </div>
 
           {/* CTA Button */}
-          <button className="btn-primary animate-pulse-glow">
+          <button className="btn-primary text-[#4F227B] animate-pulse-glow">
             Reserve Your Free Spot
           </button>
         </div>

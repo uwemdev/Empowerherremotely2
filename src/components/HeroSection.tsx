@@ -6,18 +6,22 @@ import TeamImg3 from '@/assets/Sm-3.jpg';
 
 const HeroSection = () => {
   const [typedText, setTypedText] = useState('');
-  const fullText = 'Helping Men & Women Work Remotely—One Job at a Time.';
-
-  const backgroundImages = [TeamImg1, TeamImg2, TeamImg3];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  const fullText = 'Helping Men & Women Work Remotely—One Job at a Time.';
+  const backgroundImages = [TeamImg1, TeamImg2, TeamImg3];
+
+  // Background image slider
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex + 1) % backgroundImages.length
+      );
     }, 5000);
     return () => clearInterval(interval);
   }, []);
 
+  // Typing effect
   useEffect(() => {
     let index = 0;
     const interval = setInterval(() => {
@@ -56,34 +60,35 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-xl sm:text-2xl text-white mb-8 max-w-3xl mx-auto animate-slide-in-left">
-            Join a vibrant community of men and women learning the skills, landing the roles,
-            and rewriting the rules of work—from home.
+            Join a vibrant community of men and women learning the skills,
+            landing the roles, and rewriting the rules of work—from home.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-slide-in-right">
             {/* WhatsApp Button */}
             <a
-              href="https://chat.whatsapp.com/BsBDt1B5CGbLMSsDkmui72"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary group rounded-lg"
-            >
-              <Users className="w-5 h-5 mr-2" />
-              Join Our WhatsApp Community
-              <ArrowRight className="w-3 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-            </a>
+  href="https://chat.whatsapp.com/DMF18nZMj027hlzVjTAEv2?mode=ems_copy_t "
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn-primary group rounded-lg flex items-center px-1 py-9 text-sm"
+>
+  <Users className="w-5 h-5 mr-2 text-[#4F227B]" />
+  Join Our WhatsApp Community
+  <ArrowRight className="w-5 h-5 ml-2 text-[#4F227B] group-hover:translate-x-1 transition-transform duration-300" />
+</a>
 
-            {/* Telegram Button */}
-            <a
-              href="https://t.me/empowerherremotely2024"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary group"
-            >
-              <MessageSquare className="w-5 h-5 mr-2" />
-              Join Our Telegram Community
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-            </a>
+{/* Telegram Button */}
+<a
+  href="https://t.me/empowerherremotely2024"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn-secondary group flex items-center px-1 py-9 text-sm"
+>
+  <MessageSquare className="w-5 h-5 mr-2 text-[#4F227B]" />
+  Join Our Telegram Community
+  <ArrowRight className="w-5 h-5 ml-2 text-[#4F227B] group-hover:translate-x-1 transition-transform duration-300" />
+</a>
+
           </div>
 
           {/* Floating animated elements */}
@@ -119,5 +124,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
-

@@ -102,9 +102,22 @@ const Testimonials = () => {
             Join thousands of women who have transformed their careers with our community and training programs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up">
-            <button className="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
-              Join WhatsApp Community
-            </button>
+<a
+  href="https://chat.whatsapp.com/DMF18nZMj027hlzVjTAEv2?mode=ems_copy_t "  // Replace with your WhatsApp number in international format
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button
+    className="bg-gradient-to-r from-[#4F227B] via-[#603093] to-[#3d1a61] 
+               hover:from-[#603093] hover:via-[#4F227B] hover:to-[#2b1247] 
+               text-white px-8 py-4 rounded-full font-semibold 
+               transition-all duration-300 transform hover:scale-105"
+  >
+    Join WhatsApp Community
+  </button>
+</a>
+
+
             <button className="bg-white hover:bg-gray-50 text-primary px-8 py-4 rounded-full font-semibold border-2 border-primary transition-all duration-300 transform hover:scale-105">
               View Our Services
             </button>
